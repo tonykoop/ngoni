@@ -1,0 +1,23 @@
+Line,Category,Part ID,Item,Variant,Qty,Unit,Dimensions / Spec,Material,Notes,Unit Cost Est,Total Est
+1,Bowl,NGO-B01,Segment blanks (Kamele 10),Kamele 10,110,pcs,Cut per ring cut list — see cut-list.csv,4/4 Black Walnut,10% overage included (~3 bd ft net); straight grain required,—,—
+2,Bowl,NGO-B02,Segment blanks (Donso 6),Donso 6,70,pcs,Cut per ring cut list — see cut-list.csv,4/4 Black Walnut,~2 bd ft net,—,—
+3,Bowl,NGO-B03,Segment blanks (Kamele 14),Kamele 14,144,pcs,Cut per ring cut list — see cut-list.csv,4/4 Black Walnut,~4.5 bd ft net,—,—
+4,Bowl,NGO-B04,Base plug (bowl bottom),all,1,ea,Turn to match ring-1 inner Ø,Black Walnut or Maple,Closes bottom of bowl; glue to ring 1,—,—
+5,Neck,NGO-N01,Neck blank — Kamele 10,Kamele 10,1,ea,"30"" × 1.5"" × 1.5""",Hard Maple,Straight grain; longer than needed for waste,—,—
+6,Neck,NGO-N01B,Neck blank — Donso 6,Donso 6,1,ea,"24"" × 1.5"" × 1.5""",Hard Maple,As above,—,—
+7,Neck,NGO-N01C,Neck blank — Kamele 14,Kamele 14,1,ea,"36"" × 1.5"" × 1.5""",Hard Maple,As above,—,—
+8,Head,NGO-H01,Goatskin rawhide (Kamele 10/14),Kamele 10|14,1,ea,16 in+ diameter raw,Rawhide goatskin,Soak 12–24 h before mounting; natural tanning preferred,—,—
+9,Head,NGO-H01B,Goatskin rawhide (Donso 6),Donso 6,1,ea,13 in+ diameter raw,Rawhide goatskin,As above,—,—
+10,Bridge,NGO-BR01,Bridge blank,all,1,ea,"4"" × 2"" × 0.75""",Hard Maple,Carve notches by hand or CNC; one rank of string notches,—,—
+11,Strings,NGO-S01,Nylon monofilament — 0.85 mm,Kamele 10 str 1–3,3,ea,~36 in per string (buy bulk),Nylon monofilament,Treble gauge; exact per schedule,—,—
+12,Strings,NGO-S02,Nylon monofilament — 0.95 mm,Kamele 10 str 4–5,2,ea,~36 in per string,Nylon monofilament,—,—
+13,Strings,NGO-S03,Nylon monofilament — 1.05 mm,Kamele 10 str 6–7,2,ea,~36 in per string,Nylon monofilament,—,—
+14,Strings,NGO-S04,Nylon monofilament — 1.20 mm,Kamele 10 str 8–10,3,ea,~36 in per string,Nylon monofilament,Bass gauge,—,—
+15,Hardware,NGO-HW01,Tuning rings (konso),all,per string count,ea,Braided leather slide ring or wooden peg,Leather or hardwood,Traditional friction tuning; adjust tightness for tuning,—,—
+16,Hardware,NGO-HW02,String anchor bar / tail rod,all,1,ea,"Steel rod 3/8"" Ø or hardwood dowel",Steel or hardwood,Spans bowl base inside; strings looped over,—,—
+17,Hardware,NGO-HW03,Skin tacking hardware,Kamele 10,16,ea,Upholstery tacks or nylon lacing cord,Steel / nylon,Secure skin to bowl rim while drying; can remove after,—,—
+18,Finishing,NGO-F01,Titebond III glue,all,1,bottle,8 oz,PVA waterproof,Bowl segment and neck glue joints,—,—
+19,Finishing,NGO-F02,Tung oil finish,all,1,bottle,8 oz,Tung oil,2–3 coats on bowl + neck; do NOT apply to skin,—,—
+20,Finishing,NGO-F03,Sandpaper assortment,all,1,set,80 / 120 / 180 / 220 / 320 / 400 grit,—,For bowl lathe turning and neck shaping,—,—
+21,Electric (opt),NGO-E01,Piezo disc — 27 mm,optional,1,ea,27 mm disc type,Piezoelectric ceramic,Under-bridge placement; same as Kora option,—,—
+22,Electric (opt),NGO-E02,Active preamp + 1/4 in jack,optional,1,ea,9V battery preamp,Various,Onboard or external,—,—

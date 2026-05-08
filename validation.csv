@@ -1,0 +1,21 @@
+Check ID,Category,Description,Method,Target,Tolerance,Measured,Cents Error,Status,Notes
+V-01,Tuning,String 1 (D5) — Kamele 10,Electronic tuner (Korg OT-120 or app),587.33 Hz,±5 cents,TBD,TBD,Pending,Record after 48-hour string settle; retune if >10 cents off
+V-02,Tuning,String 2 (C5) — Kamele 10,Electronic tuner,523.25 Hz,±5 cents,TBD,TBD,Pending,—
+V-03,Tuning,String 3 (A4) — Kamele 10,Electronic tuner,440.00 Hz,±5 cents,TBD,TBD,Pending,A4 = 440 Hz reference sanity check
+V-04,Tuning,String 4 (G4) — Kamele 10,Electronic tuner,392.00 Hz,±5 cents,TBD,TBD,Pending,—
+V-05,Tuning,String 5 (F4) — Kamele 10,Electronic tuner,349.23 Hz,±5 cents,TBD,TBD,Pending,—
+V-06,Tuning,String 6 (D4) — Kamele 10,Electronic tuner,293.66 Hz,±5 cents,TBD,TBD,Pending,—
+V-07,Tuning,String 7 (C4) — Kamele 10,Electronic tuner,261.63 Hz,±5 cents,TBD,TBD,Pending,—
+V-08,Tuning,String 8 (A3) — Kamele 10,Electronic tuner,220.00 Hz,±5 cents,TBD,TBD,Pending,—
+V-09,Tuning,String 9 (G3) — Kamele 10,Electronic tuner,196.00 Hz,±5 cents,TBD,TBD,Pending,—
+V-10,Tuning,String 10 (F3) — Kamele 10,Electronic tuner,174.61 Hz,±5 cents,TBD,TBD,Pending,—
+V-11,Structural,Neck deflection under full string load,Feeler gauge / ruler at neck tip,< 0.050 in (1.27 mm),±0.010 in,TBD,—,Pending,Measure deflection from headstock to neck tip with all strings at playing tension
+V-12,Structural,Bowl wall thickness (finished, post-lathe),Calipers at 4 equidistant points,0.375 in (3/8 in),± 1/32 in,TBD,—,Pending,Check at widest ring; thinner areas flagged for reinforcement
+V-13,Structural,Bridge stability — no rocking under tension,Visual + press test,Bridge sits flat; no rocking,0 gap under straight-edge,TBD,—,Pending,Measure string break angle at bridge ≥ 10°
+V-14,Structural,Skin tension consistency,Tap test — uniform pitch across skin,Uniform tap tone across 4 quadrants,< ±1 semitone variation,TBD,—,Pending,Test after full drying (24–48 h)
+V-15,Fit/Finish,Bowl ring glue line visibility,Visual,No open gaps; hairline acceptable,0 open gaps,TBD,—,Pending,Inspect at all 110 ring joints after lathe turning
+V-16,Fit/Finish,Neck fit in bowl entry hole,Physical,Snug press fit; no wobble,< 0.005 in play,TBD,—,Pending,Drill bowl entry hole to neck OD + 0.005 in clearance
+V-17,Ergonomic,Playing reach — farthest string from body,Physical mockup with player,All strings reachable without strain,No reported strain,TBD,—,Pending,Test with intended player; Kamele 10 should sit like small banjo in lap
+V-18,Acoustic,Intonation at 12th fret position (if fretted option),Tap harmonic vs tuner,± 5 cents,± 5 cents,TBD,TBD,N/A (unfretted),Ngoni is traditionally unfretted — this check only if frets added
+V-19,String,% breaking — Kamele 14 strings 1–7,Formula check vs actual breakage on prototype,< 55%,Calculated only,47–54% (calculated),—,Pending (Kamele 14 only),Flag if any string breaks at normal playing tension
+V-20,Acoustic,Pentatonic D-F-G-A-C pattern audible through 2 octaves,Ear + tuner,Clean pentatonic; no beating between adjacent strings,< 5 cents inter-string error,TBD,TBD,Pending,—

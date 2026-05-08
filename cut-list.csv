@@ -1,0 +1,16 @@
+Part ID,Operation,Part Name,Qty,Stock Size,Final Dim,Miter / Angle,Tool,Notes
+NGO-B01-R1,Crosscut + miter,Bowl segment ring 1,11,4/4 BW × 1.5 in wide,"2.20"" × 0.75"" × 0.625""",18° both ends,Table saw + miter sled,Ring 1 of 11; outer Ø target 7.0 in. Cut 10 + 1 spare = 11 pcs
+NGO-B01-R2,Crosscut + miter,Bowl segment ring 2,11,4/4 BW × 1.5 in wide,"2.51"" × 0.75"" × 0.625""",18° both ends,Table saw + miter sled,Outer Ø target 8.0 in
+NGO-B01-R3,Crosscut + miter,Bowl segment ring 3,11,4/4 BW × 1.5 in wide,"2.83"" × 0.75"" × 0.625""",18° both ends,Table saw + miter sled,Outer Ø target 9.0 in
+NGO-B01-R4,Crosscut + miter,Bowl segment ring 4,11,4/4 BW × 1.5 in wide,"3.08"" × 0.75"" × 0.625""",18° both ends,Table saw + miter sled,Outer Ø target 9.8 in
+NGO-B01-R5,Crosscut + miter,Bowl segment ring 5,11,4/4 BW × 1.5 in wide,"3.30"" × 0.75"" × 0.625""",18° both ends,Table saw + miter sled,Outer Ø target 10.5 in
+NGO-B01-R6,Crosscut + miter,Bowl segment ring 6,11,4/4 BW × 1.5 in wide,"3.49"" × 0.75"" × 0.625""",18° both ends,Table saw + miter sled,Outer Ø target 11.1 in
+NGO-B01-R7,Crosscut + miter,Bowl segment ring 7,11,4/4 BW × 1.5 in wide,"3.64"" × 0.75"" × 0.625""",18° both ends,Table saw + miter sled,Outer Ø target 11.6 in
+NGO-B01-R8,Crosscut + miter,Bowl segment ring 8,11,4/4 BW × 1.5 in wide,"3.77"" × 0.75"" × 0.625""",18° both ends,Table saw + miter sled,Outer Ø target 12.0 in
+NGO-B01-R9,Crosscut + miter,Bowl segment ring 9,11,4/4 BW × 1.5 in wide,"3.86"" × 0.75"" × 0.625""",18° both ends,Table saw + miter sled,Outer Ø target 12.3 in
+NGO-B01-R10,Crosscut + miter,Bowl segment ring 10,11,4/4 BW × 1.5 in wide,"3.93"" × 0.75"" × 0.625""",18° both ends,Table saw + miter sled,Outer Ø target 12.5 in
+NGO-B01-R11,Crosscut + miter,Bowl segment ring 11 (head rim),11,4/4 BW × 1.5 in wide,"3.96"" × 0.75"" × 0.625""",18° both ends,Table saw + miter sled,Outer Ø target 12.6 in; trim to final depth on lathe
+NGO-B04,Face + turn,Bowl base plug,1,4/4 BW or Maple 8 in × 8 in square,Round disc to match ring-1 inner Ø (~6.25 in),None,Bandsaw + lathe,Glues to ring 1 to close bottom of bowl
+NGO-N01,S4S + rough shape,Neck blank (Kamele 10),1,"1.5"" × 1.5"" × 32"" (2"" waste each end)","30"" finished × 1.0"" Ø round",None,Jointer + planer + spokeshave / lathe,"Rough on jointer; turn round or shape D-profile; final sand to 220, scraper finish"
+NGO-BR01,Crosscut + profile,Bridge blank,1,BW or Maple scrap,"4.0"" × 2.0"" × 0.75""",None,Bandsaw + files / CNC,Carve arch crown on top; 10 evenly-spaced notches (8 mm spacing); flat foot
+NGO-HW02,Cut to length,String anchor rod,1,3/8 in Ø steel rod × 36 in stock,Bowl-base-chord width + 0.5 in (~13.5 in),None,Hacksaw + file,Drill 2 anchor holes in bowl wall at base; rod passes through
