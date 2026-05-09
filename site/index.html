@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ngoni (Kamele N'goni) — Heifer Zephyr Instrument Works</title>
+  <style>
+    :root {
+      --walnut:   #3B2314;
+      --cream:    #F5EDD6;
+      --terra:    #A0522D;
+      --gold:     #C8922A;
+      --slate:    #3A5A7C;
+      --charcoal: #2C2C2C;
+      --midgray:  #666;
+      --tan:      #EAD9B8;
+      --lighttan: #FAF4E8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: Inter, system-ui, sans-serif; background: var(--cream); color: var(--charcoal); }
+
+    /* ── Header ── */
+    header {
+      background: var(--walnut);
+      padding: 3rem 2rem 2rem;
+      text-align: center;
+    }
+    header h1 {
+      font-family: Georgia, serif;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      color: var(--gold);
+      letter-spacing: 0.06em;
+    }
+    header .subtitle {
+      color: var(--cream);
+      font-size: 1.1rem;
+      margin-top: 0.4rem;
+      font-style: italic;
+    }
+    header .variants {
+      display: inline-flex; gap: 1rem; margin-top: 1.2rem;
+      background: rgba(255,255,255,0.08); border-radius: 4px; padding: 0.5rem 1.2rem;
+    }
+    header .variants span {
+      color: var(--gold); font-size: 0.9rem; font-weight: 600;
+    }
+    header .variants span + span::before { content: "·"; margin-right: 1rem; color: var(--cream); opacity: 0.5; }
+
+    /* ── Nav ── */
+    nav {
+      background: var(--terra);
+      display: flex; justify-content: center; flex-wrap: wrap; gap: 0;
+    }
+    nav a {
+      color: var(--cream); text-decoration: none; padding: 0.7rem 1.4rem;
+      font-size: 0.88rem; font-weight: 600; letter-spacing: 0.04em;
+      transition: background 0.15s;
+    }
+    nav a:hover { background: rgba(0,0,0,0.2); }
+
+    /* ── Main layout ── */
+    main { max-width: 1100px; margin: 0 auto; padding: 2.5rem 1.5rem; }
+    section { margin-bottom: 3rem; }
+    h2 {
+      font-family: Georgia, serif;
+      font-size: 1.5rem; color: var(--walnut);
+      border-bottom: 3px solid var(--terra); padding-bottom: 0.4rem; margin-bottom: 1.4rem;
+    }
+    h3 { font-size: 1.05rem; color: var(--terra); margin: 1.2rem 0 0.5rem; }
+    p { line-height: 1.7; margin-bottom: 0.9rem; }
+    a { color: var(--slate); }
+
+    /* ── Cards ── */
+    .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.2rem; }
+    .card {
+      background: white; border-radius: 6px; padding: 1.3rem;
+      border-left: 4px solid var(--terra);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    }
+    .card.blue { border-left-color: var(--slate); }
+    .card.gold  { border-left-color: var(--gold); }
+    .card h3 { margin-top: 0; }
+
+    /* ── Design input table ── */
+    table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+    thead tr { background: var(--walnut); color: var(--cream); }
+    thead th { padding: 0.55rem 0.8rem; text-align: left; font-weight: 600; }
+    tbody tr:nth-child(even) { background: var(--tan); }
+    tbody tr:nth-child(odd)  { background: var(--lighttan); }
+    td { padding: 0.45rem 0.8rem; }
+    td.highlight { font-weight: 700; color: var(--terra); }
+
+    /* ── String schedule ── */
+    .safe   { color: #2a5a2a; font-weight: 600; }
+    .warn   { color: #a05000; font-weight: 600; }
+
+    /* ── SVG drawing embed ── */
+    .drawing-frame {
+      background: white; border: 1px solid var(--tan);
+      border-radius: 4px; padding: 1rem;
+      overflow-x: auto; margin: 1rem 0;
+    }
+    .drawing-frame img, .drawing-frame object {
+      max-width: 100%; height: auto; display: block;
+    }
+
+    /* ── Build steps ── */
+    .phase { margin-bottom: 1.5rem; }
+    .phase-title {
+      background: var(--terra); color: var(--cream);
+      padding: 0.4rem 1rem; border-radius: 4px 4px 0 0;
+      font-weight: 700; font-size: 0.95rem;
+    }
+    .steps { list-style: none; border: 1px solid var(--tan); border-top: none; }
+    .steps li {
+      padding: 0.55rem 1rem;
+      border-bottom: 1px solid var(--tan);
+      font-size: 0.92rem; line-height: 1.5;
+      display: flex; align-items: flex-start; gap: 0.6rem;
+    }
+    .steps li:last-child { border-bottom: none; }
+    .steps li::before {
+      content: attr(data-n); min-width: 1.6rem;
+      color: var(--terra); font-weight: 700; font-size: 0.85rem; padding-top: 0.1rem;
+    }
+
+    /* ── Risk table ── */
+    .risk-high { background: #fff0ee !important; }
+    .risk-med  { background: #fffbe8 !important; }
+
+    /* ── File map ── */
+    .file-list { display: grid; grid-template-columns: 1fr 1fr; gap: 0.3rem; }
+    .file-row { font-size: 0.88rem; }
+    .file-row code { background: var(--tan); padding: 0.1rem 0.35rem; border-radius: 3px; font-size: 0.85rem; color: var(--walnut); }
+
+    /* ── Footer ── */
+    footer {
+      background: var(--walnut); color: var(--cream);
+      text-align: center; padding: 2rem 1rem;
+      font-size: 0.88rem;
+    }
+    footer a { color: var(--gold); }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Ngoni</h1>
+  <p class="subtitle">Kamele N'goni — West African Plucked Lute · Segmented Bowl · Goatskin Head · Nylon Strings</p>
+  <div class="variants">
+    <span>Donso 6-string</span>
+    <span>Kamele 10-string</span>
+    <span>Kamele 14-string</span>
+    <span>Pentatonic D–F–G–A–C</span>
+  </div>
+</header>
+
+<nav>
+  <a href="#context">Context</a>
+  <a href="#design">Design</a>
+  <a href="#strings">Strings</a>
+  <a href="#drawings">Drawings</a>
+  <a href="#bom">BOM</a>
+  <a href="#build">Build</a>
+  <a href="#risks">Risks</a>
+  <a href="#files">Files</a>
+</nav>
+
+<main>
+
+<!-- ── Cultural Context ──────────────────────────── -->
+<section id="context">
+  <h2>Cultural Context &amp; Project Intent</h2>
+  <div class="card-grid">
+    <div class="card">
+      <h3>The Instrument</h3>
+      <p>The ngoni is a plucked-string bowl-lute of the <strong>Mande peoples</strong> of West Africa — Mali, Guinea, Senegal, Burkina Faso. It is one of the oldest continuously-played string instruments in the West African tradition.</p>
+      <p>The <strong>Donso ngoni</strong> (6-string) is tied to the donso hunting brotherhoods and carries ceremonial weight. The <strong>Kamele ngoni</strong> (10–12 strings) is a modernized form popularized in the 1950s–60s, now the standard performance instrument.</p>
+      <p>"Ngoni" is considered a likely etymological ancestor of the word <em>banjo</em> via the transatlantic diaspora.</p>
+    </div>
+    <div class="card blue">
+      <h3>This Project</h3>
+      <p>This repository documents the ngoni as an <strong>engineering object</strong> — parametric string schedule, segmented bowl construction, and shop-ready build documentation — while acknowledging its living cultural tradition with full respect.</p>
+      <p>The instrument's origins are attributed to the Mande griot and donso traditions. This documentation does not claim cultural authority over the music or ceremonial forms.</p>
+      <p><em>References: Charry (2000), Mande Music; Coolen (1984), The Fodet. See <a href="../resources.md">resources.md</a> for full bibliography.</em></p>
+    </div>
+    <div class="card gold">
+      <h3>Related Instruments</h3>
+      <p><strong>Kora</strong> — larger 21-string harp-lute cousin; same segmented bowl technique<br>
+         <strong>Conga / Ashiko</strong> — share ring-stack-and-turn construction method<br>
+         <strong>Banjo</strong> — descendant instrument; skin head over resonating bowl</p>
+      <p>Part of the <a href="https://github.com/tonykoop/instrument-maker">Heifer Zephyr Instrument Works</a> catalogue.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── Design Inputs ─────────────────────────────── -->
+<section id="design">
+  <h2>Design Inputs — Three Variants</h2>
+  <table>
+    <thead>
+      <tr><th>Parameter</th><th>Donso 6</th><th>Kamele 10 ★</th><th>Kamele 14</th><th>Unit</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>String count</td><td>6</td><td class="highlight">10</td><td>14</td><td>—</td></tr>
+      <tr><td>Bowl outer Ø</td><td>10.0</td><td class="highlight">12.6</td><td>17.7</td><td>in</td></tr>
+      <tr><td>Bowl depth</td><td>5.0</td><td class="highlight">6.5</td><td>8.0</td><td>in</td></tr>
+      <tr><td>Neck length</td><td>24</td><td class="highlight">30</td><td>36</td><td>in</td></tr>
+      <tr><td>Longest string (vib.)</td><td>18.0</td><td class="highlight">22.0</td><td>28.0</td><td>in</td></tr>
+      <tr><td>Shortest string (vib.)</td><td>7.0</td><td class="highlight">6.5</td><td>6.0</td><td>in</td></tr>
+      <tr><td>Treble tension</td><td>6</td><td class="highlight">6</td><td>6</td><td>lbf</td></tr>
+      <tr><td>Bass tension</td><td>10</td><td class="highlight">12</td><td>14</td><td>lbf</td></tr>
+      <tr><td>Segments / ring</td><td>10</td><td class="highlight">10</td><td>12</td><td>—</td></tr>
+      <tr><td>Bowl wood</td><td>Blk Walnut</td><td class="highlight">Blk Walnut</td><td>Blk Walnut</td><td>—</td></tr>
+    </tbody>
+  </table>
+  <p style="margin-top:0.6rem; font-size:0.88rem; color:var(--midgray)">★ = Primary design case · All computed values from Mersenne–Taylor model · Neck deflection at full load: ~0.048 in (✓ &lt; 0.050 in limit)</p>
+</section>
+
+<!-- ── String Schedule ───────────────────────────── -->
+<section id="strings">
+  <h2>String Schedule — Kamele 10 (Mersenne–Taylor)</h2>
+  <p style="font-size:0.88rem; color:var(--midgray)">f = (1/2L) × √(T/μ) · Nylon density 0.04155 lb/in³ · Breaking stress 44,600 psi · g = 386.4 in/s²</p>
+  <table>
+    <thead>
+      <tr><th>#</th><th>Note</th><th>Freq (Hz)</th><th>Vib Len (in)</th><th>Tension (lbf)</th><th>Gauge (in)</th><th>Gauge (mm)</th><th>% Breaking</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td>D5</td><td>587.33</td><td>6.5</td><td>6</td><td>0.0349</td><td>0.887</td><td class="safe">14.1 ✓</td></tr>
+      <tr><td>2</td><td>C5</td><td>523.25</td><td>7.5</td><td>6</td><td>0.0340</td><td>0.863</td><td class="safe">14.9 ✓</td></tr>
+      <tr><td>3</td><td>A4</td><td>440.00</td><td>9.0</td><td>6</td><td>0.0337</td><td>0.855</td><td class="safe">15.1 ✓</td></tr>
+      <tr><td>4</td><td>G4</td><td>392.00</td><td>10.5</td><td>8</td><td>0.0374</td><td>0.950</td><td class="safe">16.3 ✓</td></tr>
+      <tr><td>5</td><td>F4</td><td>349.23</td><td>12.0</td><td>8</td><td>0.0367</td><td>0.933</td><td class="safe">16.9 ✓</td></tr>
+      <tr><td>6</td><td>D4</td><td>293.66</td><td>14.0</td><td>10</td><td>0.0418</td><td>1.063</td><td class="safe">16.3 ✓</td></tr>
+      <tr><td>7</td><td>C4</td><td>261.63</td><td>16.0</td><td>10</td><td>0.0411</td><td>1.044</td><td class="safe">16.9 ✓</td></tr>
+      <tr><td>8</td><td>A3</td><td>220.00</td><td>18.5</td><td>12</td><td>0.0463</td><td>1.176</td><td class="safe">16.0 ✓</td></tr>
+      <tr><td>9</td><td>G3</td><td>196.00</td><td>20.5</td><td>12</td><td>0.0469</td><td>1.191</td><td class="safe">15.6 ✓</td></tr>
+      <tr><td>10</td><td>F3</td><td>174.61</td><td>22.0</td><td>12</td><td>0.0491</td><td>1.246</td><td class="safe">14.2 ✓</td></tr>
+    </tbody>
+  </table>
+  <p style="margin-top:0.6rem; font-size:0.88rem;">All %breaking values 14–17% — <strong>well within safe range</strong> for plain nylon. Gauge range 0.855–1.246 mm maps to standard monofilament sizes. Tensions confirmed under 50% breaking for all Donso 6 and Kamele 10 strings.</p>
+</section>
+
+<!-- ── Drawings ──────────────────────────────────── -->
+<section id="drawings">
+  <h2>Manufacturing Drawings</h2>
+  <h3>DWG-NGO-001 — Assembly Side Elevation (~1:4)</h3>
+  <div class="drawing-frame">
+    <img src="../drawings/ngoni-assembly.svg" alt="Ngoni assembly side elevation drawing showing bowl, neck, bridge, strings, and key dimensions">
+  </div>
+  <h3>DWG-NGO-005 — Bridge Detail (2:1 enlarged)</h3>
+  <div class="drawing-frame">
+    <img src="../drawings/ngoni-bridge-detail.svg" alt="Ngoni bridge detail showing 10 notches at 8mm spacing, crown arch, foot dimensions">
+  </div>
+  <p style="font-size:0.88rem; color:var(--midgray)">Drawings DWG-NGO-002 through 006 pending CAD. See <a href="../drawing-brief.md">drawing-brief.md</a> for full drawing specifications.</p>
+</section>
+
+<!-- ── BOM ───────────────────────────────────────── -->
+<section id="bom">
+  <h2>Bill of Materials — Kamele 10</h2>
+  <table>
+    <thead><tr><th>Item</th><th>Qty</th><th>Material / Spec</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td>Bowl segments</td><td>110 pcs (+ 10% extra)</td><td>4/4 Black Walnut</td><td>Straight grain; ~3 bd ft</td></tr>
+      <tr><td>Bowl base plug</td><td>1 ea</td><td>Black Walnut</td><td>Closes bottom; lathe-turned</td></tr>
+      <tr><td>Neck blank</td><td>1 ea</td><td>Hard Maple 30×1.5×1.5 in</td><td>Straight grain preferred</td></tr>
+      <tr><td>Goatskin head</td><td>1 ea</td><td>Rawhide goatskin, 16 in+ Ø</td><td>Soak 12–24 h; rawhide not chrome-tanned</td></tr>
+      <tr><td>Bridge blank</td><td>1 ea</td><td>Hard Maple 4×2×0.75 in</td><td>10 notches @ 8 mm spacing</td></tr>
+      <tr><td>Nylon strings</td><td>10 ea</td><td>Monofilament 0.85–1.25 mm</td><td>4 gauges; all plain nylon</td></tr>
+      <tr><td>Konso tuning rings</td><td>10 ea</td><td>Braided leather cord</td><td>Traditional friction tuning</td></tr>
+      <tr><td>String anchor rod</td><td>1 ea</td><td>Steel 3/8 in Ø × ~13.5 in</td><td>At bowl base</td></tr>
+      <tr><td>Upholstery tacks</td><td>16 ea</td><td>Steel tacks</td><td>Skin securing</td></tr>
+      <tr><td>Titebond III + Tung oil</td><td>1 each</td><td>—</td><td>Standard finishing kit</td></tr>
+    </tbody>
+  </table>
+  <p style="margin-top:0.6rem; font-size:0.88rem; color:var(--midgray)">Estimated material cost: $91–$214 · See <a href="../sourcing.csv">sourcing.csv</a> for full supplier list and prices.</p>
+</section>
+
+<!-- ── Build Workflow ────────────────────────────── -->
+<section id="build">
+  <h2>Build Workflow</h2>
+
+  <div class="phase">
+    <div class="phase-title">Phase 1 — Bowl</div>
+    <ul class="steps">
+      <li data-n="1.">Set miter sled to 18° (test ring on scrap first)</li>
+      <li data-n="2.">Cut 121 segments (11 rings × 11 pcs, 10% extra)</li>
+      <li data-n="3.">Glue rings one at a time with band clamp; cure 1 h each</li>
+      <li data-n="4.">Stack 11 rings; pipe-clamp; cure 4 h</li>
+      <li data-n="5.">Lathe: true exterior, hollow interior to 3/8 in wall; drill 1.25 in neck-entry hole</li>
+    </ul>
+  </div>
+
+  <div class="phase">
+    <div class="phase-title">Phase 2 — Neck &amp; Bridge</div>
+    <ul class="steps">
+      <li data-n="6.">Joint and plane neck blank; shape round/D-profile (spokeshave)</li>
+      <li data-n="7.">Sneak-fit neck into bowl hole — add glue when fit is confirmed</li>
+      <li data-n="8.">Carve/CNC bridge: crown arch, 10 notches @ 8 mm spacing</li>
+      <li data-n="9.">Test bridge stability before skin — break angle must be ≥ 10°</li>
+    </ul>
+  </div>
+
+  <div class="phase">
+    <div class="phase-title">Phase 3 — Skin Head</div>
+    <ul class="steps">
+      <li data-n="10.">Soak goatskin 12–24 h in room-temperature water</li>
+      <li data-n="11.">Stretch over bowl rim; tack with 16 tacks in star pattern</li>
+      <li data-n="12.">Dry 24–48 h at room temperature — no heat</li>
+    </ul>
+  </div>
+
+  <div class="phase">
+    <div class="phase-title">Phase 4 — Final Assembly &amp; Finishing</div>
+    <ul class="steps">
+      <li data-n="13.">Install string anchor rod through bowl base</li>
+      <li data-n="14.">String up — middle strings first; bring all to approximate tension</li>
+      <li data-n="15.">Attach konso tuning rings at headstock; tune to D–F–G–A–C</li>
+      <li data-n="16.">Allow 48 h string/skin settle; retune daily for 1 week</li>
+      <li data-n="17.">Sand bowl and neck to 400 grit; apply 2–3 coats tung oil (avoid skin)</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ── Risks ─────────────────────────────────────── -->
+<section id="risks">
+  <h2>Risk Register — Top Issues</h2>
+  <table>
+    <thead><tr><th>ID</th><th>Category</th><th>Risk</th><th>Mitigation</th><th>Priority</th></tr></thead>
+    <tbody>
+      <tr class="risk-high"><td>B-05</td><td>Structural</td><td>Bridge tips under tension if break angle &lt; 10°</td><td>Test with mockup before skin mounting</td><td><strong>HIGH</strong></td></tr>
+      <tr class="risk-med"><td>A-02</td><td>Acoustic</td><td>Kamele 14 top strings (0.45–0.55 mm) fragile at 48–54% breaking</td><td>Raise tension to 7–8 lbf on str 1–5; buy extra stock</td><td>Medium</td></tr>
+      <tr class="risk-high"><td>B-01</td><td>Structural</td><td>Bowl ring joints fail in humidity cycle</td><td>Titebond III; kiln-dry stock (&lt;8% MC); full cure before load</td><td>Medium-High</td></tr>
+      <tr class="risk-med"><td>A-01</td><td>Acoustic</td><td>String pitch drift &gt; ±10 cents in first 48 h</td><td>Allow 48–72 h settle; retune daily for 1 week</td><td>Expected</td></tr>
+      <tr><td>D-01</td><td>Supply</td><td>Goatskin unavailable in 16 in+ diameter</td><td>Order from Sioux Trading Post early (3-wk lead); order 2 skins</td><td>Plan ahead</td></tr>
+    </tbody>
+  </table>
+  <p style="margin-top:0.6rem; font-size:0.88rem; color:var(--midgray)">Full risk register: <a href="../risks.md">risks.md</a> (5 categories, 16 risks)</p>
+</section>
+
+<!-- ── File Map ───────────────────────────────────── -->
+<section id="files">
+  <h2>Repository Files</h2>
+  <div class="file-list">
+    <div class="file-row"><code>design.md</code> — Parametric design doc, string schedules, neck loads</div>
+    <div class="file-row"><code>bom.csv</code> — Full bill of materials (3 variants)</div>
+    <div class="file-row"><code>sourcing.csv</code> — Suppliers, prices, lead times</div>
+    <div class="file-row"><code>cut-list.csv</code> — Miter cut dimensions per ring</div>
+    <div class="file-row"><code>validation.csv</code> — 20 tuning and structural checks</div>
+    <div class="file-row"><code>assembly-manual.md</code> — 19-step shop build guide with checkboxes</div>
+    <div class="file-row"><code>supplier-rfq.md</code> — RFQ templates (5 materials)</div>
+    <div class="file-row"><code>risks.md</code> — Risk register (5 categories)</div>
+    <div class="file-row"><code>resources.md</code> — Cultural provenance + bibliography</div>
+    <div class="file-row"><code>jig-decision.md</code> — Fixture decisions for each build step</div>
+    <div class="file-row"><code>drawing-brief.md</code> — Drawing spec (DWG-NGO-001 to 006)</div>
+    <div class="file-row"><code>drawings/</code> — SVG drawings (assembly + bridge detail)</div>
+    <div class="file-row"><code>cad/cad-notes.md</code> — SolidWorks strategy + OpenSCAD starter</div>
+    <div class="file-row"><code>cnc/setup-sheet.md</code> — CNC setup: bridge notch + neck rough pass</div>
+    <div class="file-row"><code>wolfram/ngoni-model.wl</code> — String schedule, Helmholtz, Manipulate</div>
+    <div class="file-row"><code>Ngoni-Capstone.pptx</code> — 14-slide capstone deck</div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p><strong>Ngoni (Kamele N'goni)</strong> · Heifer Zephyr Instrument Works · Tony Koop</p>
+  <p style="margin-top:0.4rem;">
+    <a href="https://github.com/tonykoop/ngoni">github.com/tonykoop/ngoni</a> ·
+    <a href="https://github.com/tonykoop/instrument-maker">instrument-maker catalogue</a>
+  </p>
+  <p style="margin-top:0.4rem; font-size:0.82rem; color:#C8A870;">
+    CC BY 4.0 · Build documentation · Design stage: Packet-ready (prototype pending)
+  </p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Ngoni — Shop Print Packet</title>
+<style>
+  @page { size: letter; margin: 0.75in 0.75in 0.75in 0.75in; }
+  @media print {
+    .page-break { page-break-before: always; }
+    body { font-size: 10pt; }
+  }
+  body { font-family: Arial, Helvetica, sans-serif; max-width: 7.5in; margin: 0 auto; color: #1a1a1a; }
+  h1 { font-size: 22pt; border-bottom: 3px solid #3B2314; color: #3B2314; margin-bottom: 4px; }
+  h2 { font-size: 14pt; background: #3B2314; color: #F5EDD6; padding: 4px 8px; margin: 18px 0 6px; }
+  h3 { font-size: 11pt; color: #A0522D; border-bottom: 1px solid #EAD9B8; margin: 12px 0 4px; }
+  p, li { font-size: 10pt; line-height: 1.5; }
+  table { width: 100%; border-collapse: collapse; font-size: 9pt; margin: 8px 0; }
+  thead tr { background: #3B2314; color: #F5EDD6; }
+  th { padding: 5px 6px; text-align: left; }
+  td { padding: 4px 6px; border-bottom: 1px solid #EAD9B8; }
+  tr:nth-child(even) td { background: #FAF4E8; }
+  .cover-block { background: #3B2314; color: #F5EDD6; padding: 18px 20px; margin-bottom: 14px; }
+  .cover-block h1 { color: #C8922A; border-bottom: 2px solid #C8922A; font-size: 28pt; }
+  .cover-block p { color: #EAD9B8; }
+  .checkbox { font-size: 14pt; margin-right: 6px; }
+  .step-row { display: flex; align-items: flex-start; gap: 8px; padding: 4px 0; border-bottom: 1px solid #EAD9B8; }
+  .step-num { min-width: 24px; font-weight: bold; color: #A0522D; }
+  .note-box { background: #FFF8E8; border-left: 4px solid #C8922A; padding: 8px 12px; margin: 8px 0; font-size: 9.5pt; }
+  .risk-high { background: #FFF0EE; }
+  .risk-med  { background: #FFFBE8; }
+  .check { font-family: monospace; font-size: 12pt; }
+  .val-pass { color: #2a5a2a; font-weight: bold; }
+  .val-pending { color: #888; }
+  footer-line { display: block; border-top: 1px solid #ccc; margin-top: 12px; padding-top: 6px; font-size: 8pt; color: #888; }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════
+     COVER PAGE
+═══════════════════════════════════════ -->
+<div class="cover-block">
+  <h1>Ngoni</h1>
+  <p style="font-size:14pt; font-style:italic;">Kamele N'goni — Shop Build Packet</p>
+  <p>West African Plucked Lute · Segmented Bowl · Goatskin Head · Nylon Strings<br>
+     <strong>Variants:</strong> Donso 6 · Kamele 10 (primary) · Kamele 14</p>
+  <p style="margin-top:8px;">Heifer Zephyr Instrument Works · Tony Koop · 2026-05-08</p>
+</div>
+
+<h2>Quick Start</h2>
+<p><strong>Governing physics:</strong> Mersenne–Taylor (strings) + Helmholtz + skin radiator (bowl)<br>
+<strong>Total string load (Kamele 10):</strong> ~92 lbf at target tensions (safe for maple neck)<br>
+<strong>Bowl segments:</strong> 110 × 18° miter · 11 rings · 10 segments/ring<br>
+<strong>Lathe swing needed:</strong> 12 in minimum (Kamele 10), 18 in (Kamele 14)<br>
+<strong>Top risk:</strong> Bridge stability — verify break angle ≥ 10° before mounting skin</p>
+
+<h2>File Map</h2>
+<table>
+<thead><tr><th>File</th><th>Purpose</th></tr></thead>
+<tbody>
+<tr><td>design.md</td><td>Parametric design doc — string schedules, ring cut list, neck loads</td></tr>
+<tr><td>bom.csv</td><td>Full bill of materials</td></tr>
+<tr><td>sourcing.csv</td><td>Suppliers, prices, lead times</td></tr>
+<tr><td>cut-list.csv</td><td>Segment miter dimensions per ring</td></tr>
+<tr><td>validation.csv</td><td>20 tuning and structural checks</td></tr>
+<tr><td>assembly-manual.md</td><td>19-step shop build guide with checkboxes</td></tr>
+<tr><td>risks.md</td><td>Red-team risk register (16 risks)</td></tr>
+<tr><td>drawings/ngoni-assembly.svg</td><td>Assembly side elevation</td></tr>
+<tr><td>drawings/ngoni-bridge-detail.svg</td><td>Bridge detail (2:1)</td></tr>
+<tr><td>wolfram/ngoni-model.wl</td><td>Wolfram string schedule + Manipulate</td></tr>
+<tr><td>cnc/setup-sheet.md</td><td>CNC operation plan (bridge notch + neck rough)</td></tr>
+</tbody>
+</table>
+
+<!-- ══════════════════════════════════════
+     DESIGN INPUTS
+═══════════════════════════════════════ -->
+<div class="page-break"></div>
+<h2>Design Inputs — All Variants</h2>
+<table>
+<thead><tr><th>Parameter</th><th>Donso 6</th><th>Kamele 10 ★</th><th>Kamele 14</th><th>Unit</th></tr></thead>
+<tbody>
+<tr><td>String count</td><td>6</td><td><strong>10</strong></td><td>14</td><td>—</td></tr>
+<tr><td>Bowl outer Ø</td><td>10.0</td><td><strong>12.6</strong></td><td>17.7</td><td>in</td></tr>
+<tr><td>Bowl depth</td><td>5.0</td><td><strong>6.5</strong></td><td>8.0</td><td>in</td></tr>
+<tr><td>Neck length</td><td>24</td><td><strong>30</strong></td><td>36</td><td>in</td></tr>
+<tr><td>Shortest string (vib)</td><td>7.0</td><td><strong>6.5</strong></td><td>6.0</td><td>in</td></tr>
+<tr><td>Longest string (vib)</td><td>18.0</td><td><strong>22.0</strong></td><td>28.0</td><td>in</td></tr>
+<tr><td>Target tension — treble</td><td>6</td><td><strong>6</strong></td><td>6</td><td>lbf</td></tr>
+<tr><td>Target tension — bass</td><td>10</td><td><strong>12</strong></td><td>14</td><td>lbf</td></tr>
+<tr><td>Segments / ring</td><td>10</td><td><strong>10</strong></td><td>12</td><td>—</td></tr>
+<tr><td>Ring height</td><td>0.625</td><td><strong>0.625</strong></td><td>0.625</td><td>in</td></tr>
+<tr><td>Miter angle</td><td>18°</td><td><strong>18°</strong></td><td>15°</td><td>deg</td></tr>
+<tr><td>Number of rings</td><td>8</td><td><strong>11</strong></td><td>13</td><td>rings</td></tr>
+<tr><td>Total segments (+ 10%)</td><td>88</td><td><strong>121</strong></td><td>144</td><td>pcs</td></tr>
+<tr><td>Board feet (bowl)</td><td>~2</td><td><strong>~3</strong></td><td>~4.5</td><td>bd ft</td></tr>
+</tbody>
+</table>
+
+<h2>String Schedule — Kamele 10</h2>
+<p style="font-size:8.5pt; color:#666;">f = (1/2L)√(T/μ) · ρ = 0.04155 lb/in³ · σ_break = 44,600 psi · g = 386.4 in/s²</p>
+<table>
+<thead><tr><th>#</th><th>Note</th><th>Freq (Hz)</th><th>Len (in)</th><th>T (lbf)</th><th>Gauge (in)</th><th>Gauge (mm)</th><th>% Break</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>D5</td><td>587.33</td><td>6.5</td><td>6</td><td>0.0349</td><td>0.887</td><td>14.1%</td><td>✓ Safe</td></tr>
+<tr><td>2</td><td>C5</td><td>523.25</td><td>7.5</td><td>6</td><td>0.0340</td><td>0.863</td><td>14.9%</td><td>✓</td></tr>
+<tr><td>3</td><td>A4</td><td>440.00</td><td>9.0</td><td>6</td><td>0.0337</td><td>0.855</td><td>15.1%</td><td>✓ A4 ref</td></tr>
+<tr><td>4</td><td>G4</td><td>392.00</td><td>10.5</td><td>8</td><td>0.0374</td><td>0.950</td><td>16.3%</td><td>✓</td></tr>
+<tr><td>5</td><td>F4</td><td>349.23</td><td>12.0</td><td>8</td><td>0.0367</td><td>0.933</td><td>16.9%</td><td>✓</td></tr>
+<tr><td>6</td><td>D4</td><td>293.66</td><td>14.0</td><td>10</td><td>0.0418</td><td>1.063</td><td>16.3%</td><td>✓</td></tr>
+<tr><td>7</td><td>C4</td><td>261.63</td><td>16.0</td><td>10</td><td>0.0411</td><td>1.044</td><td>16.9%</td><td>✓</td></tr>
+<tr><td>8</td><td>A3</td><td>220.00</td><td>18.5</td><td>12</td><td>0.0463</td><td>1.176</td><td>16.0%</td><td>✓</td></tr>
+<tr><td>9</td><td>G3</td><td>196.00</td><td>20.5</td><td>12</td><td>0.0469</td><td>1.191</td><td>15.6%</td><td>✓</td></tr>
+<tr><td>10</td><td>F3</td><td>174.61</td><td>22.0</td><td>12</td><td>0.0491</td><td>1.246</td><td>14.2%</td><td>✓</td></tr>
+</tbody>
+</table>
+<div class="note-box">All Kamele 10 strings: 14–17% breaking — safe. Total string load ~92 lbf. Nylon monofilament; no wound strings needed.</div>
+
+<!-- ══════════════════════════════════════
+     RING CUT LIST
+═══════════════════════════════════════ -->
+<div class="page-break"></div>
+<h2>Ring Cut List — Kamele 10 Bowl (18° Miter Sled)</h2>
+<div class="note-box">Set miter sled to 18° ONCE. Batch-cut all segments. Cut 11 per ring (10 + 1 spare). Total: 121 segments. Label by ring number immediately.</div>
+<table>
+<thead><tr><th>Ring</th><th>Target Outer Ø (in)</th><th>Target Inner Ø (in)</th><th>Wall (in)</th><th>Seg Outer Arc (in)</th><th>Board W min (in)</th><th>Qty</th></tr></thead>
+<tbody>
+<tr><td>1 (base)</td><td>7.0</td><td>6.25</td><td>0.375</td><td>2.20</td><td>0.75</td><td>11</td></tr>
+<tr><td>2</td><td>8.0</td><td>7.25</td><td>0.375</td><td>2.51</td><td>0.75</td><td>11</td></tr>
+<tr><td>3</td><td>9.0</td><td>8.25</td><td>0.375</td><td>2.83</td><td>0.75</td><td>11</td></tr>
+<tr><td>4</td><td>9.8</td><td>9.05</td><td>0.375</td><td>3.08</td><td>0.75</td><td>11</td></tr>
+<tr><td>5</td><td>10.5</td><td>9.75</td><td>0.375</td><td>3.30</td><td>0.75</td><td>11</td></tr>
+<tr><td>6</td><td>11.1</td><td>10.35</td><td>0.375</td><td>3.49</td><td>0.75</td><td>11</td></tr>
+<tr><td>7</td><td>11.6</td><td>10.85</td><td>0.375</td><td>3.64</td><td>0.75</td><td>11</td></tr>
+<tr><td>8</td><td>12.0</td><td>11.25</td><td>0.375</td><td>3.77</td><td>0.75</td><td>11</td></tr>
+<tr><td>9</td><td>12.3</td><td>11.55</td><td>0.375</td><td>3.86</td><td>0.75</td><td>11</td></tr>
+<tr><td>10</td><td>12.5</td><td>11.75</td><td>0.375</td><td>3.93</td><td>0.75</td><td>11</td></tr>
+<tr><td>11 (head rim)</td><td>12.6</td><td>11.85</td><td>0.375</td><td>3.96</td><td>0.75</td><td>11</td></tr>
+<tr><td><strong>TOTAL</strong></td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td><strong>121</strong></td></tr>
+</tbody>
+</table>
+<p style="font-size:8.5pt; color:#666;">Stock dimensions are from 4/4 BW boards ~1.5 in wide. Cut segments at ~0.75 in height (5/8 in ring height + turning allowance). Finish wall to 3/8 in on lathe.</p>
+
+<!-- ══════════════════════════════════════
+     ASSEMBLY CHECKLIST
+═══════════════════════════════════════ -->
+<div class="page-break"></div>
+<h2>Assembly Checklist</h2>
+
+<h3>Phase 1 — Bowl</h3>
+<table>
+<thead><tr><th style="width:30px;">✓</th><th>Step</th><th>Tool</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td>☐</td><td>1. Set miter sled to 18°; test ring with scrap</td><td>Table saw, miter sled</td><td>Verify ring closes flat before committing to walnut</td></tr>
+<tr><td>☐</td><td>2. Cut 121 segments (11 rings × 11 pcs); label by ring</td><td>Table saw, stop block</td><td>10% extra per ring</td></tr>
+<tr><td>☐</td><td>3. Glue rings one at a time; band clamp; cure 1 h each</td><td>Band clamp, Titebond III</td><td>Check flat on surface plate before glue sets</td></tr>
+<tr><td>☐</td><td>4. Stack 11 rings; glue faces; pipe-clamp; cure 4 h</td><td>Pipe clamps, MDF cauls</td><td>Check for twist before setting</td></tr>
+<tr><td>☐</td><td>5. Glue base plug to ring 1</td><td>Clamps</td><td>Cure 2 h</td></tr>
+<tr><td>☐</td><td>6. Mount bowl on lathe (< 500 RPM until balanced)</td><td>Lathe (12 in swing min)</td><td>Safety: large blank; start slow</td></tr>
+<tr><td>☐</td><td>7. True exterior; hollow interior to 3/8 in wall</td><td>Bowl gouge, scraper</td><td>Check wall with calipers at 4 points</td></tr>
+<tr><td>☐</td><td>8. Drill 1.25 in neck-entry hole (V-block cradle)</td><td>Drill press, Forstner bit</td><td>Perpendicular to head-rim face</td></tr>
+</tbody>
+</table>
+
+<h3>Phase 2 — Neck &amp; Bridge</h3>
+<table>
+<thead><tr><th style="width:30px;">✓</th><th>Step</th><th>Tool</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td>☐</td><td>9. Joint/plane neck blank; shape to 1.0 in round or D-profile</td><td>Jointer, spokeshave, rasp</td><td>Bowl-entry end: snug fit in 1.25 in hole</td></tr>
+<tr><td>☐</td><td>10. Shape bridge: crown arch, 10 notches @ 8 mm</td><td>Files or CNC</td><td>Flat bottom; 1 mm × 1 mm notches</td></tr>
+<tr><td>☐</td><td>11. TEST bridge angle with mockup — verify ≥ 10°</td><td>Protractor</td><td>⚠ DO NOT mount skin until this passes</td></tr>
+</tbody>
+</table>
+
+<h3>Phase 3 — Skin Head</h3>
+<table>
+<thead><tr><th style="width:30px;">✓</th><th>Step</th><th>Tool</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td>☐</td><td>12. Soak goatskin 12–24 h in room-temperature water</td><td>Large basin</td><td>Do not use hot water</td></tr>
+<tr><td>☐</td><td>13. Center skin; tack in star pattern (16 tacks)</td><td>Tacks, hammer</td><td>N–S first, then E–W, then diagonals</td></tr>
+<tr><td>☐</td><td>14. Dry 24–48 h at room temperature</td><td>—</td><td>No heat; expect significant tightening</td></tr>
+</tbody>
+</table>
+
+<h3>Phase 4 — Final Assembly</h3>
+<table>
+<thead><tr><th style="width:30px;">✓</th><th>Step</th><th>Tool</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td>☐</td><td>15. Install string anchor rod through bowl base</td><td>Drill, hacksaw</td><td>3/8 in Ø steel rod through 2 holes</td></tr>
+<tr><td>☐</td><td>16. Insert neck; glue; clamp 2 h</td><td>Pipe clamp</td><td>Protrude 1.5 in inside bowl; align with anchor rod axis</td></tr>
+<tr><td>☐</td><td>17. String up — middle strings (5–6) first</td><td>—</td><td>Loop over anchor; run over bridge; attach konso at headstock</td></tr>
+<tr><td>☐</td><td>18. Tune to D–F–G–A–C; settle 48 h</td><td>Korg OT-120</td><td>Expect pitch drop; retune daily for 1 week</td></tr>
+<tr><td>☐</td><td>19. Sand to 400 grit; 2–3 coats tung oil (avoid skin)</td><td>Sandpaper, brush</td><td>Cure 8 h between coats</td></tr>
+</tbody>
+</table>
+
+<!-- ══════════════════════════════════════
+     VALIDATION SHEET
+═══════════════════════════════════════ -->
+<div class="page-break"></div>
+<h2>Validation / Tuning Sheet</h2>
+<p style="font-size:8.5pt; color:#666;">Record measured values after 48-hour string settle. Target ±5 cents for all strings.</p>
+<table>
+<thead><tr><th>ID</th><th>Check</th><th>Target</th><th>Measured</th><th>Cents Err</th><th>Pass?</th></tr></thead>
+<tbody>
+<tr><td>V-01</td><td>String 1 (D5)</td><td>587.33 Hz</td><td>_______ Hz</td><td>_______¢</td><td>☐</td></tr>
+<tr><td>V-02</td><td>String 2 (C5)</td><td>523.25 Hz</td><td>_______ Hz</td><td>_______¢</td><td>☐</td></tr>
+<tr><td>V-03</td><td>String 3 (A4)</td><td>440.00 Hz</td><td>_______ Hz</td><td>_______¢</td><td>☐</td></tr>
+<tr><td>V-04</td><td>String 4 (G4)</td><td>392.00 Hz</td><td>_______ Hz</td><td>_______¢</td><td>☐</td></tr>
+<tr><td>V-05</td><td>String 5 (F4)</td><td>349.23 Hz</td><td>_______ Hz</td><td>_______¢</td><td>☐</td></tr>
+<tr><td>V-06</td><td>String 6 (D4)</td><td>293.66 Hz</td><td>_______ Hz</td><td>_______¢</td><td>☐</td></tr>
+<tr><td>V-07</td><td>String 7 (C4)</td><td>261.63 Hz</td><td>_______ Hz</td><td>_______¢</td><td>☐</td></tr>
+<tr><td>V-08</td><td>String 8 (A3)</td><td>220.00 Hz</td><td>_______ Hz</td><td>_______¢</td><td>☐</td></tr>
+<tr><td>V-09</td><td>String 9 (G3)</td><td>196.00 Hz</td><td>_______ Hz</td><td>_______¢</td><td>☐</td></tr>
+<tr><td>V-10</td><td>String 10 (F3)</td><td>174.61 Hz</td><td>_______ Hz</td><td>_______¢</td><td>☐</td></tr>
+<tr><td>V-11</td><td>Neck deflection at full load</td><td>&lt; 0.050 in</td><td>_______ in</td><td>—</td><td>☐</td></tr>
+<tr><td>V-12</td><td>Wall thickness (4 points)</td><td>≥ 5/16 in</td><td>_______ in</td><td>—</td><td>☐</td></tr>
+<tr><td>V-13</td><td>Bridge — no rocking; break angle ≥ 10°</td><td>Pass</td><td>___°</td><td>—</td><td>☐</td></tr>
+<tr><td>V-14</td><td>Skin tension uniform (4 quadrants)</td><td>Uniform tap tone</td><td>_______</td><td>—</td><td>☐</td></tr>
+<tr><td>V-15</td><td>No open ring glue gaps</td><td>No open gaps</td><td>_______</td><td>—</td><td>☐</td></tr>
+<tr><td>V-16</td><td>Neck fit in bowl entry hole</td><td>&lt; 0.010 in play</td><td>_______</td><td>—</td><td>☐</td></tr>
+<tr><td>V-17</td><td>Ergonomic reach — all strings reachable</td><td>No strain</td><td>_______</td><td>—</td><td>☐</td></tr>
+<tr><td>V-20</td><td>Pentatonic pattern audible, 2 octaves</td><td>&lt; 5¢ inter-string</td><td>_______</td><td>—</td><td>☐</td></tr>
+</tbody>
+</table>
+<p>Builder: __________________ Date: __________________ Environment: ________°F / ______% RH</p>
+
+<!-- ══════════════════════════════════════
+     RISK SUMMARY
+═══════════════════════════════════════ -->
+<div class="page-break"></div>
+<h2>Risk Summary (Top Issues)</h2>
+<table>
+<thead><tr><th>ID</th><th>Risk</th><th>Action Before Build</th></tr></thead>
+<tbody>
+<tr class="risk-high"><td>B-05</td><td><strong>Bridge tips — string break angle too shallow</strong></td><td>Test with paper mockup; verify ≥ 10° break angle BEFORE skin</td></tr>
+<tr class="risk-med"><td>A-02</td><td>Kamele 14 fine strings (0.45–0.55 mm) at 48–54% breaking</td><td>Raise tension to 7–8 lbf on str 1–5; buy 2× stock</td></tr>
+<tr class="risk-high"><td>B-01</td><td>Bowl ring joint fails in humidity cycle</td><td>Titebond III; kiln-dry stock; full cure before stringing</td></tr>
+<tr class="risk-med"><td>A-01</td><td>String pitch drift > ±10 cents in first 48 h</td><td>Expected; allow 48–72 h settle; retune daily 1 week</td></tr>
+<tr class="risk-med"><td>D-01</td><td>Goatskin unavailable in 16 in+ diameter</td><td>Order Sioux Trading Post early (3-wk lead); order 2 skins</td></tr>
+</tbody>
+</table>
+
+<h2>Supplier Quick Reference</h2>
+<table>
+<thead><tr><th>Item</th><th>Primary Supplier</th><th>Est. Cost</th><th>Lead Time</th></tr></thead>
+<tbody>
+<tr><td>Black Walnut 4/4 (~3 bd ft)</td><td>Woodcraft / Hearne Hardwoods</td><td>$20–32</td><td>In stock</td></tr>
+<tr><td>Hard Maple neck blank</td><td>Woodcraft</td><td>$8–14</td><td>In stock</td></tr>
+<tr><td>Goatskin rawhide (16 in+ Ø)</td><td>Sioux Trading Post</td><td>$15–35/skin</td><td>1–3 weeks</td></tr>
+<tr><td>Nylon monofilament (4 gauges)</td><td>Amazon bulk / D'Addario</td><td>$20–48</td><td>In stock</td></tr>
+<tr><td>Braided leather (konso)</td><td>Tandy Leather</td><td>$5–10</td><td>In stock</td></tr>
+<tr><td>Titebond III + Tung oil</td><td>Woodcraft</td><td>$18–30</td><td>In stock</td></tr>
+<tr><td><strong>TOTAL (approx)</strong></td><td>—</td><td><strong>$91–214</strong></td><td>—</td></tr>
+</tbody>
+</table>
+
+<div style="margin-top:24px; border-top:2px solid #3B2314; padding-top:8px; font-size:8pt; color:#888;">
+  Ngoni (Kamele N'goni) · Heifer Zephyr Instrument Works · Tony Koop · 2026-05-08 · CC BY 4.0<br>
+  Design stage: Packet-ready · Prototype not yet built · All computed values are pre-prototype estimates
+</div>
+</body>
+</html>

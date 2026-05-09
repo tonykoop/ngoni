@@ -1,0 +1,187 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 700" width="920" height="700" font-family="Inter,Arial,sans-serif">
+  <rect width="920" height="700" fill="#fafaf8"/>
+  <rect x="8" y="8" width="904" height="684" fill="none" stroke="#444" stroke-width="1.5"/>
+  <line x1="8" y1="640" x2="912" y2="640" stroke="#444" stroke-width="1"/>
+
+  <!-- Arrow marker defs -->
+  <defs>
+    <marker id="arr" markerWidth="7" markerHeight="7" refX="3.5" refY="3.5" orient="auto">
+      <path d="M0,0 L7,3.5 L0,7 Z" fill="#1a6bb0"/>
+    </marker>
+    <marker id="arrl" markerWidth="7" markerHeight="7" refX="3.5" refY="3.5" orient="auto-start-reverse">
+      <path d="M0,0 L7,3.5 L0,7 Z" fill="#1a6bb0"/>
+    </marker>
+  </defs>
+
+  <!-- ═══════════════════════════════════════
+       BOWL — side section view
+       Bowl OD = 12.6 in → 151 px at 12px/in
+       Bowl depth = 6.5 in → 78 px
+       Center: cx=270, cy=360 (bottom of bowl)
+  ═══════════════════════════════════════ -->
+
+  <!-- Outer bowl profile (walnut fill) -->
+  <path d="M 194,360 C 194,348 119,284 119,282 L 421,282 C 421,284 346,348 346,360 Z"
+        fill="#e8d5b0" stroke="#666" stroke-width="1.8"/>
+
+  <!-- Inner hollow (dashed) -->
+  <path d="M 209,352 C 209,342 134,296 134,294 L 406,294 C 406,296 331,342 331,352 Z"
+        fill="#fafaf8" stroke="#aaa" stroke-width="1" stroke-dasharray="5,3"/>
+
+  <!-- Base plug solid line -->
+  <line x1="194" y1="360" x2="346" y2="360" stroke="#666" stroke-width="2.5"/>
+
+  <!-- Head rim line (top of bowl) -->
+  <line x1="119" y1="282" x2="421" y2="282" stroke="#555" stroke-width="2.5"/>
+
+  <!-- Goatskin head (brown line atop rim) -->
+  <line x1="119" y1="278" x2="421" y2="278" stroke="#8B4513" stroke-width="3.5"/>
+
+  <!-- Section A-A centerline -->
+  <line x1="270" y1="265" x2="270" y2="376" stroke="#cc0000" stroke-width="1" stroke-dasharray="7,4"/>
+  <text x="258" y="262" font-size="10" fill="#cc0000" font-weight="bold">A</text>
+  <text x="258" y="388" font-size="10" fill="#cc0000" font-weight="bold">A</text>
+  <text x="278" y="388" font-size="9" fill="#cc0000">Section A-A</text>
+
+  <!-- Wall thickness tick marks -->
+  <line x1="119" y1="290" x2="134" y2="290" stroke="#888" stroke-width="1.5"/>
+  <text x="120" y="306" font-size="8.5" fill="#666" text-anchor="middle">⅜"</text>
+  <text x="120" y="316" font-size="8" fill="#666" text-anchor="middle">wall</text>
+
+  <!-- ═══════════════════════════════════════
+       NECK — horizontal, right of bowl
+       Neck 30 in → 360 px; starts at cx=270, skin_y=278
+       Neck Ø 1 in → 12 px half = 6 px
+  ═══════════════════════════════════════ -->
+
+  <!-- Neck body -->
+  <rect x="270" y="272" width="360" height="12" fill="#f0e0c0" stroke="#777" stroke-width="1.5" rx="4"/>
+
+  <!-- Headstock block -->
+  <rect x="630" y="268" width="16" height="20" fill="#dfc898" stroke="#666" stroke-width="1.5" rx="2"/>
+
+  <!-- Nut line -->
+  <line x1="632" y1="266" x2="632" y2="290" stroke="#444" stroke-width="2"/>
+
+  <!-- Konso tuning rings (schematic circles on neck) -->
+  <circle cx="650" cy="278" r="4" fill="none" stroke="#8B4513" stroke-width="1.5"/>
+  <circle cx="660" cy="278" r="4" fill="none" stroke="#8B4513" stroke-width="1.5"/>
+  <circle cx="670" cy="278" r="4" fill="none" stroke="#8B4513" stroke-width="1.5"/>
+
+  <!-- ═══════════════════════════════════════
+       BRIDGE — sits on skin ~18px right of bowl center
+       Bridge: 4 in wide × 0.625 in tall → 48 × 7.5 px
+  ═══════════════════════════════════════ -->
+  <rect x="294" y="270" width="48" height="8" fill="#d4a847" stroke="#886633" stroke-width="1.5" rx="2"/>
+
+  <!-- ═══════════════════════════════════════
+       STRINGS (5 representative shown)
+       Run from nut (x=632) over bridge to anchor rod (x~200)
+  ═══════════════════════════════════════ -->
+  <line x1="632" y1="275" x2="318" y2="272" stroke="#7a6244" stroke-width="0.9" opacity="0.7"/>
+  <line x1="318" y1="272" x2="200" y2="278" stroke="#7a6244" stroke-width="0.8" stroke-dasharray="4,3" opacity="0.6"/>
+
+  <line x1="632" y1="276" x2="318" y2="273" stroke="#6B5B3E" stroke-width="0.9" opacity="0.7"/>
+  <line x1="318" y1="273" x2="200" y2="279" stroke="#6B5B3E" stroke-width="0.8" stroke-dasharray="4,3" opacity="0.6"/>
+
+  <line x1="632" y1="278" x2="318" y2="275" stroke="#5c4c30" stroke-width="1.1" opacity="0.8"/>
+  <line x1="318" y1="275" x2="200" y2="280" stroke="#5c4c30" stroke-width="0.9" stroke-dasharray="4,3" opacity="0.6"/>
+
+  <line x1="632" y1="280" x2="318" y2="277" stroke="#4d3f28" stroke-width="1.2" opacity="0.8"/>
+  <line x1="318" y1="277" x2="200" y2="281" stroke="#4d3f28" stroke-width="0.9" stroke-dasharray="4,3" opacity="0.6"/>
+
+  <line x1="632" y1="282" x2="318" y2="278" stroke="#3e3020" stroke-width="1.3" opacity="0.7"/>
+  <line x1="318" y1="278" x2="200" y2="282" stroke="#3e3020" stroke-width="0.9" stroke-dasharray="4,3" opacity="0.6"/>
+
+  <!-- String anchor rod (at bowl base, just above bottom) -->
+  <rect x="196" y="356" width="8" height="8" fill="#888" stroke="#555" stroke-width="1" rx="1"/>
+
+  <!-- ═══════════════════════════════════════
+       DIMENSION LINES (blue)
+  ═══════════════════════════════════════ -->
+
+  <!-- Bowl OD: 12.6 in -->
+  <line x1="119" y1="252" x2="421" y2="252" stroke="#1a6bb0" stroke-width="1" marker-start="url(#arrl)" marker-end="url(#arr)"/>
+  <line x1="119" y1="278" x2="119" y2="250" stroke="#1a6bb0" stroke-width="0.8" stroke-dasharray="3,2"/>
+  <line x1="421" y1="278" x2="421" y2="250" stroke="#1a6bb0" stroke-width="0.8" stroke-dasharray="3,2"/>
+  <text x="270" y="248" font-size="10" fill="#1a6bb0" text-anchor="middle">12.6 in (320 mm) — Bowl OD</text>
+
+  <!-- Bowl depth: 6.5 in -->
+  <line x1="446" y1="282" x2="446" y2="360" stroke="#1a6bb0" stroke-width="1" marker-start="url(#arrl)" marker-end="url(#arr)"/>
+  <line x1="421" y1="282" x2="448" y2="282" stroke="#1a6bb0" stroke-width="0.8" stroke-dasharray="3,2"/>
+  <line x1="346" y1="360" x2="448" y2="360" stroke="#1a6bb0" stroke-width="0.8" stroke-dasharray="3,2"/>
+  <text x="458" y="325" font-size="10" fill="#1a6bb0" transform="rotate(-90,458,325)" text-anchor="middle">6.5 in (165 mm) Depth</text>
+
+  <!-- Neck total: 30 in -->
+  <line x1="270" y1="242" x2="630" y2="242" stroke="#1a6bb0" stroke-width="1" marker-start="url(#arrl)" marker-end="url(#arr)"/>
+  <line x1="270" y1="272" x2="270" y2="240" stroke="#1a6bb0" stroke-width="0.8" stroke-dasharray="3,2"/>
+  <line x1="630" y1="272" x2="630" y2="240" stroke="#1a6bb0" stroke-width="0.8" stroke-dasharray="3,2"/>
+  <text x="450" y="238" font-size="10" fill="#1a6bb0" text-anchor="middle">30.0 in (762 mm) — Neck Length</text>
+
+  <!-- Longest vibrating string: 22 in (str 10, F3) -->
+  <line x1="370" y1="304" x2="632" y2="304" stroke="#1a6bb0" stroke-width="1" marker-start="url(#arrl)" marker-end="url(#arr)"/>
+  <line x1="370" y1="278" x2="370" y2="306" stroke="#1a6bb0" stroke-width="0.8" stroke-dasharray="3,2"/>
+  <line x1="632" y1="278" x2="632" y2="306" stroke="#1a6bb0" stroke-width="0.8" stroke-dasharray="3,2"/>
+  <text x="500" y="318" font-size="9.5" fill="#1a6bb0" text-anchor="middle">22.0 in (559 mm) — Str 10 F3 (longest vib. length)</text>
+
+  <!-- Shortest vibrating string: 6.5 in (str 1, D5) -->
+  <line x1="554" y1="330" x2="632" y2="330" stroke="#1a6bb0" stroke-width="1" marker-start="url(#arrl)" marker-end="url(#arr)"/>
+  <line x1="554" y1="278" x2="554" y2="332" stroke="#1a6bb0" stroke-width="0.8" stroke-dasharray="3,2"/>
+  <text x="592" y="345" font-size="9.5" fill="#1a6bb0" text-anchor="middle">6.5 in — Str 1 D5</text>
+
+  <!-- ═══════════════════════════════════════
+       CALLOUT LEADERS + LABELS
+  ═══════════════════════════════════════ -->
+
+  <!-- Goatskin label -->
+  <line x1="160" y1="278" x2="100" y2="245" stroke="#555" stroke-width="0.9"/>
+  <text x="18" y="243" font-size="9.5" fill="#333">Goatskin head (rawhide)</text>
+
+  <!-- Bowl material -->
+  <line x1="346" y1="320" x2="480" y2="395" stroke="#555" stroke-width="0.9"/>
+  <text x="483" y="393" font-size="9.5" fill="#333">Black Walnut</text>
+  <text x="483" y="406" font-size="9.5" fill="#333">segmented bowl</text>
+  <text x="483" y="419" font-size="9.5" fill="#333">(10 seg/ring × 11 rings)</text>
+
+  <!-- Neck material -->
+  <line x1="450" y1="272" x2="450" y2="215" stroke="#555" stroke-width="0.9"/>
+  <text x="380" y="210" font-size="9.5" fill="#333">Hard Maple neck · 1.0 in Ø round · 30 in</text>
+
+  <!-- Bridge label -->
+  <line x1="318" y1="270" x2="340" y2="228" stroke="#555" stroke-width="0.9"/>
+  <text x="340" y="224" font-size="9.5" fill="#333">Bridge — Hard Maple · 10 notches @ 8 mm</text>
+
+  <!-- Konso label -->
+  <line x1="660" y1="274" x2="700" y2="245" stroke="#555" stroke-width="0.9"/>
+  <text x="703" y="242" font-size="9.5" fill="#333">Konso (leather tuning rings)</text>
+
+  <!-- Anchor rod label -->
+  <line x1="196" y1="362" x2="150" y2="400" stroke="#555" stroke-width="0.9"/>
+  <text x="18" y="398" font-size="9.5" fill="#333">String anchor rod (3/8 in Ø steel)</text>
+
+  <!-- Wall thickness note -->
+  <text x="60" y="460" font-size="9" fill="#666">Wall target: 3/8 in (9.5 mm)</text>
+  <text x="60" y="473" font-size="9" fill="#666">Turn from ~3/4 in seg blank on lathe</text>
+
+  <!-- Note: strings shown schematic -->
+  <text x="60" y="500" font-size="9" fill="#888" font-style="italic">* 5 of 10 strings shown for clarity</text>
+  <text x="60" y="513" font-size="9" fill="#888" font-style="italic">* Dashed lines = tail (non-vibrating) section</text>
+  <text x="60" y="526" font-size="9" fill="#888" font-style="italic">* Bridge dims TBD — verify break angle ≥ 10° before finalizing</text>
+
+  <!-- ═══════════════════════════════════════
+       TITLE BLOCK
+  ═══════════════════════════════════════ -->
+  <text x="18" y="656" font-size="8.5" fill="#888">PROJECT</text>
+  <text x="18" y="671" font-size="11" font-weight="bold" fill="#222">Ngoni (Kamele N'goni)</text>
+
+  <text x="200" y="656" font-size="8.5" fill="#888">DRAWING</text>
+  <text x="200" y="671" font-size="11" font-weight="bold" fill="#222">DWG-NGO-001 — Assembly Side Elevation (1:4 approx)</text>
+
+  <text x="580" y="656" font-size="8.5" fill="#888">SCALE / UNITS</text>
+  <text x="580" y="671" font-size="10" fill="#222">~1:4 · Inches (mm in parens)</text>
+
+  <text x="738" y="656" font-size="8.5" fill="#888">DATE / REV</text>
+  <text x="738" y="671" font-size="10" fill="#222">2026-05-08 · Rev A</text>
+
+  <text x="18" y="690" font-size="8.5" fill="#aaa">Tony Koop — Heifer Zephyr Instrument Works · All dims nominal; tolerances per drawing-brief.md · CAD TBD</text>
+</svg>
