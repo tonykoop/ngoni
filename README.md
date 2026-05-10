@@ -61,6 +61,7 @@ All 10 strings: 14–17% breaking — well within safe range for plain nylon. Fu
 | [wolfram/ngoni-model.wl](wolfram/ngoni-model.wl) | Wolfram package — string schedule, bowl resonance, Manipulate, audio |
 | [site/index.html](site/index.html) | Build-log site |
 | [photo-shotlist.md](photo-shotlist.md) | In-progress and finished-instrument shot list |
+| [review-evidence.md](review-evidence.md) | PR review evidence, local checks, and readiness summary |
 | [ngoni-design-table.xlsx](ngoni-design-table.xlsx) | Original parametric design table (Excel) |
 
 ---

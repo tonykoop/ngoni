@@ -1,0 +1,8 @@
+{
+  "packet": "ngoni",
+  "mode": "root",
+  "readiness": "L2/L2+",
+  "slides": "capstone-deck.md",
+  "print_packet": "print-packet.md",
+  "pending": ["capstone-deck.pptx", "print-packet.pdf", "SolidWorks CAD model", "prototype photos", "measured tuning data"]
+}
