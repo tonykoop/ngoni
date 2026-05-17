@@ -1,0 +1,8 @@
+gate_id,branch,gate,required_evidence,status,next_action
+V5-001,ngoni-string-family,family_spec_hypotheses,`build/packet/family-spec.csv` includes explicit scope, inferred vs observed, and authority statuses,open,Verify row roles for scale and transfer boundaries
+V5-002,ngoni-string-family,speaking_length_capture,`validation-loop.csv` has a planned and logged speaking-length capture protocol,blocked,Collect contact-point and span measurements before any fixed scale claims
+V5-003,ngoni-string-family,bridge_transfer_capture,`validation-loop.csv` records bridge transfer behavior tied to at least one test course,blocked,Capture transfer profile and stability notes before promotion
+V5-004,ngoni-string-family,resonator_body_plan,`validation-loop.csv` captures body cavity/bridge-zone geometry and response links,blocked,Keep body and head coupling as plan-only until measured and linked
+V5-005,ngoni-string-family,string_source_gate,`validation-loop.csv` includes source/product evidence and response sample,blocked,Do not publish string tension/pitch claims without source and response evidence
+V5-006,ngoni-string-family,visual_authority,`visual-output-register.csv` remains non-authoritative for design tables and sketches,open,Keep generated or conceptual visuals marked `reference_only`
+V5-007,ngoni-string-family,v5_readiness,L2 packet stays blocked while loop and source gates are open,blocked,Advance only when all open gates above are cleared with evidence
