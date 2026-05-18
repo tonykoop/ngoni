@@ -1,8 +1,71 @@
 {
   "packet": "ngoni",
   "mode": "root",
+  "title": "Ngoni - Studio Explorer",
+  "instrument": "Ngoni",
+  "build_target": "Kamele ngoni 10-string shop packet",
+  "artifact_focus": "Root-mode ngoni packet: design, BOM, validation, drawings, Wolfram starter, print packet, build-log site, and learn-to-play material.",
+  "family_members": [
+    "West African harp-lute / chordophone",
+    "Donso 6-string",
+    "Kamele 10-string",
+    "Kamele 14-string"
+  ],
+  "release_status": "private review",
+  "packet_version": "instrument-maker v4.3 root-mode packet; explorer R2",
   "readiness": "L2/L2+",
   "slides": "capstone-deck.md",
   "print_packet": "print-packet.md",
-  "pending": ["capstone-deck.pptx", "print-packet.pdf", "SolidWorks CAD model", "prototype photos", "measured tuning data"]
+  "release_gate": {
+    "public_candidate": false,
+    "required_before_public": [
+      "SolidWorks CAD model and browser-renderable GLB/GLTF export are pending.",
+      "Physical prototype photos are pending.",
+      "Measured tuning, bridge, head, and resonator validation data are pending.",
+      "Capstone deck PPTX and print-packet PDF exports are pending."
+    ]
+  },
+  "cultural_provenance": {
+    "claim": "The ngoni is a living Mande harp-lute tradition. This repository documents a respectful shop-built engineering adaptation with a segmented wood bowl; it does not claim cultural authority over traditional musical or ceremonial practice."
+  },
+  "engineering": {
+    "wolfram": [
+      {
+        "source_file": "wolfram/ngoni-model.wl",
+        "cloud_path": "wolfram/ngoni-model.wl",
+        "kind": "local-wl",
+        "permission": "local"
+      },
+      {
+        "source_file": "wolfram-starter.wl",
+        "cloud_path": "wolfram-starter.wl",
+        "kind": "local-wl",
+        "permission": "local"
+      }
+    ]
+  },
+  "sources": [
+    {
+      "title": "Repository bibliography and cultural provenance",
+      "credit": "See resources.md for cited ngoni and Mande music references.",
+      "url": "resources.md"
+    },
+    {
+      "title": "Validation report",
+      "credit": "Predictive packet validation; measured data remains pending.",
+      "url": "validation-report.md"
+    },
+    {
+      "title": "Public release triage",
+      "credit": "Readiness and public-safety assessment for the current packet.",
+      "url": "public-release-triage.md"
+    }
+  ],
+  "pending": [
+    "capstone-deck.pptx",
+    "print-packet.pdf",
+    "SolidWorks CAD model",
+    "prototype photos",
+    "measured tuning data"
+  ]
 }
