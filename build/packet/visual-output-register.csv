@@ -1,0 +1,6 @@
+artifact_id,path,artifact_kind,role,authority,derived_from,dimension_claim,notes
+VOR-001,ngoni-design-table.xlsx,design_table,reference_data,review_only,reference_only,review_only,Workbook values are hypothesis inputs and do not grant fabrication authority.
+VOR-002,build/packet/family-spec.csv,family_spec,packet_authority,analysis_only,family-spec scope rows,not_authoritative_until_measured,Starter rows define hypotheses; do not use as fabrication dimensions until measurement gates pass.
+VOR-003,build/packet/validation-loop.csv,validation_loop,packet_process,analysis_only,measurement plan and status fields,not_authoritative_until_measured,Loop rows are the required capture order and gate scheduler.
+VOR-004,build/packet/validation.csv,validation_matrix,packet_process,analysis_only,validation-loop.csv,not_authoritative_until_measured,Gates remain source-of-truth for branch promotion.
+VOR-005,build/packet/design.md,design_note,packet_scope,reference_only,planning notes,reference_only,Design notes are for scope framing and do not authorize build numbers.
