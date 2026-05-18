@@ -60,6 +60,7 @@ All 10 strings: 14–17% breaking — well within safe range for plain nylon. Fu
 | [cnc/setup-sheet.md](cnc/setup-sheet.md) | CNC operation plan (bridge notch + neck rough) |
 | [wolfram/ngoni-model.wl](wolfram/ngoni-model.wl) | Wolfram package — string schedule, bowl resonance, Manipulate, audio |
 | [site/index.html](site/index.html) | Build-log site |
+| [explorer.html](explorer.html) | Studio explorer for reviewing the packet, gates, Wolfram files, drawings, site, and learn-to-play material |
 | [photo-shotlist.md](photo-shotlist.md) | In-progress and finished-instrument shot list |
 | [review-evidence.md](review-evidence.md) | PR review evidence, local checks, and readiness summary |
 | [ngoni-design-table.xlsx](ngoni-design-table.xlsx) | Original parametric design table (Excel) |
