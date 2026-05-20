@@ -25,6 +25,8 @@ A complete v4.3 instrument-maker build packet for a shop-built ngoni — **segme
 
 **Key engineering challenge:** string/resonator hybrid — Mersenne–Taylor strings over a skin-headed segmented bowl with first-order Helmholtz resonance.
 
+> **Luthier-adaptation note.** The segmented lathe-turned wood bowl is a luthier adaptation, not the traditional calabash gourd form, and acoustic equivalence to a traditional ngoni is not claimed. The packet's full cultural-provenance and measured-authority boundaries live in [claims-and-boundaries.md](claims-and-boundaries.md).
+
 ---
 
 ## String Schedule Highlights (Kamele 10)
@@ -52,6 +54,7 @@ All 10 strings: 14–17% breaking — well within safe range for plain nylon. Fu
 | [supplier-rfq.md](supplier-rfq.md) | RFQ templates for 5 key materials |
 | [risks.md](risks.md) | Red-team risk register (5 categories, 16 risks) |
 | [resources.md](resources.md) | Cultural provenance and bibliography |
+| [claims-and-boundaries.md](claims-and-boundaries.md) | What this packet does and does not claim — cultural, luthier-adaptation, measured-authority, animal-material |
 | [jig-decision.md](jig-decision.md) | Jig decisions for each build step |
 | [drawing-brief.md](drawing-brief.md) | Drawing specifications (DWG-NGO-001 through 006) |
 | [drawings/ngoni-assembly.svg](drawings/ngoni-assembly.svg) | Assembly side elevation drawing |
