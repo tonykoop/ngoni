@@ -4,6 +4,8 @@ Engineering documentation and parametric design packet for the ngoni — the Wes
 
 Part of the [Heifer Zephyr Instrument Works](https://github.com/tonykoop/instrument-maker) instrument catalogue.
 
+**Status: L2 V5 build-packet candidate**
+
 ---
 
 ## What Is the Ngoni?
