@@ -37,8 +37,8 @@
         "permission": "local"
       },
       {
-        "source_file": "wolfram-starter.wl",
-        "cloud_path": "wolfram-starter.wl",
+        "source_file": "ngoni-starter.wl",
+        "cloud_path": "ngoni-starter.wl",
         "kind": "local-wl",
         "permission": "local"
       }

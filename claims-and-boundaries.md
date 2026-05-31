@@ -70,7 +70,7 @@ Every authority-bearing claim in this packet sits in one of three states:
 | BOM costs and supplier prices | **Public-range estimates** — not commercial quotes | [`bom.csv`](bom.csv), [`sourcing.csv`](sourcing.csv), [`supplier-rfq.md`](supplier-rfq.md) |
 | SolidWorks CAD model | **Not built** | [`cad/cad-notes.md`](cad/cad-notes.md) — strategy only |
 | Physical prototype + measured tuning + measured deflection | **Not built** | `images/` and `data/` — empty placeholders to be populated when the prototype is built |
-| Wolfram Manipulate model | **Predicted exploration tool** — driven by the same Mersenne–Taylor formulas | [`wolfram/ngoni-model.wl`](wolfram/ngoni-model.wl), [`wolfram-starter.wl`](wolfram-starter.wl) |
+| Wolfram Manipulate model | **Predicted exploration tool** — driven by the same Mersenne–Taylor formulas | [`wolfram/ngoni-model.wl`](wolfram/ngoni-model.wl), [`ngoni-starter.wl`](ngoni-starter.wl) |
 
 For the full risk register (16 risks across 5 categories, each paired with a
 specific test) see [`risks.md`](risks.md). For the formal predictive-vs-

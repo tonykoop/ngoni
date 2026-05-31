@@ -7,5 +7,5 @@ MT-001,validation.csv,measurement_template,measurement_template,fabrication,,der
 SVG-001,drawings/ngoni-assembly.svg,drawing,assembly_illustration,derived_preview,,no_dimension_claim,false,Assembly illustration. Derived preview only — not fabrication authority.
 SVG-002,drawings/ngoni-bridge-detail.svg,drawing,detail_illustration,derived_preview,,no_dimension_claim,false,Bridge detail illustration. Derived preview only.
 DRW-001,drawings/README.md,drawing,drawing_stub,pending_measurement,,placeholder,false,Drawing directory. SVG previews present; DXF fabrication geometry not yet generated.
-WL-001,wolfram-starter.wl,wolfram_source,wolfram,derived_preview,,source_only,false,Wolfram source scaffold; source-only at L2 until executed.
+WL-001,ngoni-starter.wl,wolfram_source,wolfram,derived_preview,,source_only,false,Wolfram source scaffold; source-only at L2 until executed.
 CAD-001,cad/ngoni-placeholder.scad,cad_source,cad_authoring,pending_measurement,ngoni-design-table.xlsx,scaffold_dimensions,false,Parametric OpenSCAD placeholder (bowl + neck). Not fabrication authority until reviewed.
