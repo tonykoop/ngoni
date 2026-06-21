@@ -31,16 +31,18 @@
   "engineering": {
     "wolfram": [
       {
-        "source_file": "wolfram/ngoni-model.wl",
-        "cloud_path": "wolfram/ngoni-model.wl",
-        "kind": "local-wl",
-        "permission": "local"
+        "source_file": "strings/ngoni/ngoni-starter.wl",
+        "cloud_path": "Musical_Instruments/strings/ngoni/ngoni-starter.wl",
+        "cloud_url": "https://www.wolframcloud.com/obj/wrfcoin/Musical_Instruments/strings/ngoni/ngoni-starter.wl",
+        "permission": "Public-Execute",
+        "kind": "acoustics-starter"
       },
       {
-        "source_file": "ngoni-starter.wl",
-        "cloud_path": "ngoni-starter.wl",
-        "kind": "local-wl",
-        "permission": "local"
+        "source_file": "strings/ngoni/wolfram/ngoni-model.wl",
+        "cloud_path": "Musical_Instruments/strings/ngoni/ngoni-model.wl",
+        "cloud_url": "https://www.wolframcloud.com/obj/wrfcoin/Musical_Instruments/strings/ngoni/ngoni-model.wl",
+        "permission": "Public-Execute",
+        "kind": "geometry-model"
       }
     ]
   },
