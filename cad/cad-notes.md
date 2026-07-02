@@ -2,7 +2,7 @@
 
 **Instrument:** Ngoni (Kamele N'goni)  
 **Date:** 2026-05-08  
-**CAD Status:** Not yet started — these notes define the modeling strategy for when CAD is initiated.
+**CAD Status:** OpenSCAD parametric master authored (`cad/ngoni.scad`, variant-aware Donso/Kamele, authority `pending_measurement`). SolidWorks MasterLayout workflow below remains the preferred production path and is not yet started; these notes define that strategy.
 
 ---
 
