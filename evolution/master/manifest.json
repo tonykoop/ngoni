@@ -1,0 +1,42 @@
+{
+  "product": "ngoni",
+  "pipeline": "studiopipeline:evolution-pipeline",
+  "stage": "0-intake",
+  "master_revision": "rev-A (pre-commit intake, 2026-07-01)",
+  "generated": "2026-07-01",
+  "cad_masters": [
+    {
+      "path": "cad/ngoni.scad",
+      "format": "openscad-source",
+      "sha256": "ab49b74aca2741e1ebc12429e5a194fd297650e4a6480008d166325cb9a6d540",
+      "authority": "pending_measurement",
+      "lossy": false,
+      "notes": "Parametric variant-aware master (Donso 6 / Kamele 10 / Kamele 14): segmented bowl, neck, notched bridge, string band. Supersedes retired cad/ngoni-placeholder.scad."
+    },
+    {
+      "path": "ngoni-design-table.xlsx",
+      "format": "design-table",
+      "sha256": "13ecf74265e412cd1b975115a1e41aa389117c7f589585df98a72e0aa6f25f42",
+      "authority": "fabrication",
+      "lossy": false,
+      "notes": "Workbook authority for bowl, neck, bridge, and string parameters across Donso/Kamele variants (DESIGN INPUTS + SEGMENTED BOWL + STRING SCHEDULES)."
+    },
+    {
+      "path": "wolfram/ngoni-model.wl",
+      "format": "wolfram-source",
+      "sha256": "4d8d5c8b95dc9283d5d4fd18fb0ae5c7fcd667fc4a318a690f35e70c6ff8a443",
+      "authority": "derived_preview",
+      "lossy": false,
+      "notes": "Wolfram model source; not executed. L2 evidence."
+    },
+    {
+      "path": "ngoni-starter.wl",
+      "format": "wolfram-source",
+      "sha256": "7b004aa2cb8264584579450e3f80e699a7ca59e57742e444558b1c495e51ecee",
+      "authority": "derived_preview",
+      "lossy": false,
+      "notes": "Wolfram starter scaffold; source-only."
+    }
+  ],
+  "notes": "OpenSCAD source + design table are the current masters; no STEP export yet (SolidWorks MasterLayout export is Windows-side work, out of scope for this intake pass). Gate A (Alpha workspace compile) not yet run."
+}

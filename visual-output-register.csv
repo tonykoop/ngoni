@@ -8,4 +8,5 @@ SVG-001,drawings/ngoni-assembly.svg,drawing,assembly_illustration,derived_previe
 SVG-002,drawings/ngoni-bridge-detail.svg,drawing,detail_illustration,derived_preview,,no_dimension_claim,false,Bridge detail illustration. Derived preview only.
 DRW-001,drawings/README.md,drawing,drawing_stub,pending_measurement,,placeholder,false,Drawing directory. SVG previews present; DXF fabrication geometry not yet generated.
 WL-001,ngoni-starter.wl,wolfram_source,wolfram,derived_preview,,source_only,false,Wolfram source scaffold; source-only at L2 until executed.
-CAD-001,cad/ngoni-placeholder.scad,cad_source,cad_authoring,pending_measurement,ngoni-design-table.xlsx,scaffold_dimensions,false,Parametric OpenSCAD placeholder (bowl + neck). Not fabrication authority until reviewed.
+CAD-001,cad/ngoni.scad,cad_source,cad_authoring,pending_measurement,ngoni-design-table.xlsx,derived_from_authority,false,Parametric OpenSCAD master: variant-aware (Donso 6 / Kamele 10 / Kamele 14) segmented bowl + neck + notched bridge + string band from ngoni-design-table.xlsx DESIGN INPUTS. Renders clean in OpenSCAD (exit 0). Not fabrication authority until reviewed against measured template. Supersedes retired cad/ngoni-placeholder.scad.
+WL-002,wolfram/ngoni-model.wl,wolfram_source,wolfram,derived_preview,,source_only,false,Wolfram model source; not executed — source-only evidence at L2.

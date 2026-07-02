@@ -4,7 +4,7 @@ Engineering documentation and parametric design packet for the ngoni — the Wes
 
 Part of the [Heifer Zephyr Instrument Works](https://github.com/tonykoop/instrument-maker) instrument catalogue.
 
-**Status: L2 V5 build-packet candidate**
+**Status:** L2 V5 build-packet candidate
 
 ---
 
@@ -61,7 +61,9 @@ All 10 strings: 14–17% breaking — well within safe range for plain nylon. Fu
 | [drawing-brief.md](drawing-brief.md) | Drawing specifications (DWG-NGO-001 through 006) |
 | [drawings/ngoni-assembly.svg](drawings/ngoni-assembly.svg) | Assembly side elevation drawing |
 | [drawings/ngoni-bridge-detail.svg](drawings/ngoni-bridge-detail.svg) | Bridge detail drawing (2:1) |
+| [cad/ngoni.scad](cad/ngoni.scad) | Parametric OpenSCAD master (variant-aware Donso/Kamele: bowl + neck + bridge + string band) |
 | [cad/cad-notes.md](cad/cad-notes.md) | SolidWorks strategy + OpenSCAD starter |
+| [evolution/](evolution/) | Evolution-pipeline Stage 0 intake (design intent, master manifest, revisions) |
 | [cnc/setup-sheet.md](cnc/setup-sheet.md) | CNC operation plan (bridge notch + neck rough) |
 | [wolfram/ngoni-model.wl](wolfram/ngoni-model.wl) | Wolfram package — string schedule, bowl resonance, Manipulate, audio |
 | [site/index.html](site/index.html) | Build-log site |
